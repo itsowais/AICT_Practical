@@ -20,10 +20,11 @@ def aStarSearchUtil(G, v, visited, final_path, dest, goal):
 		pq_list = []
 		pq,size = getPriorityQueue(G, v)
 		for i in range(size):
+			#print(pq.get().description)
 			pq_list.append(pq.get().description)
 		for i in pq_list:
 			if goal != 1:
-				#print "current city:", i
+				#print ("current city:", i)
 				if visited[i] == False :
 					goal = aStarSearchUtil(G, i, visited, final_path, dest, goal)
 	return goal
